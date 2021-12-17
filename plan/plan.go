@@ -166,6 +166,8 @@ func (p *Plan) Calculate() *Plan {
 			}
 		}
 	}
+	log.Debugf("Changes = %s", changes)
+
 	for _, pol := range p.Policies {
 		changes = pol.Apply(changes)
 	}
